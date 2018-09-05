@@ -35,6 +35,14 @@ var config = {
             { test: /\.(png|jpg|woff|svg|eot|ttf)\?(.*?)$/, loader: 'url-loader' },
         ],
     },
+    resolve : {
+      alias : {
+          utils    : __dirname + '/src/utils',
+          page    : __dirname + '/src/pages',
+          service : __dirname + '/src/service',
+          image   : __dirname + '/src/images',
+      }
+    },
     plugins : [
         //独立通用模块
         new webpack.optimize.CommonsChunkPlugin({
