@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "WEBPACK_ENV=dev webpack-dev-server --inline --port 8088",
-    "dev_win" : "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
+    "dev_win": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
     "dist": "WEBPACK_ENV=online webpack -p",
     "dist_win": "set WEBPACK_ENV=online && webpack -p"
   },
@@ -31,6 +31,8 @@
   },
   "dependencies": {
     "autoprefixer": "^9.1.3",
+    "hogan": "^1.0.2",
+    "jquery": "^3.3.1",
     "webpack-dev-server": "^1.16.5"
   }
 }

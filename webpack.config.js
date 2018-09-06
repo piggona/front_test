@@ -7,10 +7,13 @@ var WEBPACK_ENV = process.env.WEBPACK_ENV||'dev';
 //获取htmlWebpackplugin参数
 var getHtmlConfig = function(name){
     return {
+        //模板路径
         template : './src/view/' + name + '.html',
+        //打包文件路径
         filename : 'view/' + name + '.html',
         inject : true,
         hash : true,
+        //打包的html中引入的js模块名
         chunks : ['common',name]
     }
 }
@@ -23,7 +26,7 @@ var config = {
     },
     output: {
         path: './dist',
-        PublicPath: '/dist',
+        publicPath: '/dist/',
         filename: 'js/[name].js'
     },
     externals : {
@@ -32,7 +35,7 @@ var config = {
     module : {
         loaders: [
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
-            { test: /\.(png|jpg|woff|svg|eot|ttf)\?(.*?)$/, loader: 'url-loader' },
+            { test: /\.(png|jpg|woff|svg|eot|ttf|gif|jpeg)$/, loader: 'url-loader?limit=8192' },
         ],
     },
     resolve : {
