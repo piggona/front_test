@@ -11,23 +11,23 @@ var getHtmlConfig = function(name){
         template : './src/view/' + name + '.html',
         //打包文件路径
         filename : 'view/' + name + '.html',
-        inject : true,
-        hash : true,
+        inject   : true,
+        hash     : true,
         //打包的html中引入的js模块名
-        chunks : ['common',name]
+        chunks   : ['common',name]
     }
-}
+};
 
 var config = {
     entry : {
         'common' : ['./src/pages/common/index.js'],
-        'index' : ['./src/pages/index/index.js'],
-        'login' : ['./src/pages/login/index.js'],
+        'index'  : ['./src/pages/index/index.js'],
+        'login'  : ['./src/pages/login/index.js'],
     },
     output: {
-        path: './dist',
+        path      : './dist',
         publicPath: '/dist/',
-        filename: 'js/[name].js'
+        filename  : 'js/[name].js'
     },
     externals : {
         'jquery': 'window.jQuery'
@@ -35,21 +35,23 @@ var config = {
     module : {
         loaders: [
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
-            { test: /\.(png|jpg|woff|svg|eot|ttf|gif|jpeg)$/, loader: 'url-loader?limit=8192' },
+            { test: /\.(png|jpg|woff|svg|eot|ttf|gif|jpeg)\??.*$/, loader: "url-loader?limit=100000&name=resource/[name].[ext]" },
+            { test: /\.(woff|svg|eot|ttf)\??.*$/, loader: 'style-loader!css-loader'},
         ],
     },
     resolve : {
       alias : {
-          utils    : __dirname + '/src/utils',
-          page    : __dirname + '/src/pages',
-          service : __dirname + '/src/service',
-          image   : __dirname + '/src/images',
+          utils        : __dirname + '/src/utils',
+          pages        : __dirname + '/src/pages',
+          service      : __dirname + '/src/service',
+          image        : __dirname + '/src/images',
+          node_modules : __dirname + '/node_modules',
       }
     },
     plugins : [
         //独立通用模块
         new webpack.optimize.CommonsChunkPlugin({
-            name : 'common',
+            name    : 'common',
             filename:'js/base.js'
         }),
         // 把css单独打包到文件中

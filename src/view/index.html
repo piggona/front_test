@@ -2,24 +2,22 @@
 <html lang="en">
 <head>
     <%= require('html-loader!./layout/head-common.html') %>
+    <%= require('html-loader!./layout/head-select.html') %>
     <title>专利系统index页面</title>
 </head>
 
 <body>
-
-<div>
-    <a class="link">hello 123</a>
-    <a class="link-text">test</a>
+<%= require('html-loader!./layout/nav.html') %>
+<%= require('html-loader!./layout/nav-simple.html') %>
+<%= require('html-loader!./layout/header.html') %>
+<div class="page-wrap w">
+    <%= require('html-loader!./layout/nav-side.html') %>
+    <div class="content with-nav">
+        <%= require('html-loader!./layout/select-search-point.html') %>
+        <%= require('html-loader!./layout/second-search.html') %>
+        <%= require('html-loader!./layout/search-result.html') %>
+    </div>
 </div>
-<div>
-    <a class="btn">hello 123</a>
-    <a class="btn btn-mini">test</a>
-</div>
-<div>
-    <div class="loading"></div>
-</div>
-
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <%= require('html-loader!./layout/footer.html') %>
 </body>
 </html>

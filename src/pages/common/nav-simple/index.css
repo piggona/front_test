@@ -1,0 +1,31 @@
+a{
+
+}
+.nav-simple{
+  height: 85px;
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+  background: #212121;
+}
+.nav-simple .space{
+  height: 15px;
+  line-height: 40px;
+}
+.nav-simple .logo{
+  float: left;
+  font-size: 26px;
+  font-weight: bold;
+  color: #66BB6A;
+}
+.nav-simple .logo .logo-sec{
+  font-size: 46px;
+  font-weight: bold;
+  color: #E0E0E0;
+}
+.nav-simple .list{
+  float: right;
+  margin-top: 35px;
+  width: 50px;
+  height: 50px;
+  background: url(../../../images/icon/list.png) no-repeat;
+}

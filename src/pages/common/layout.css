@@ -43,7 +43,7 @@ input[type='checkbox']{
     text-decoration: none;
 }
 .link:hover{
-    color: #4237e8;
+    color: #66BB6A;
 }
 .link-text{
     color: #999;
@@ -57,7 +57,7 @@ input[type='checkbox']{
     line-height: 40px;
     vertical-align: middle;
     border: none;
-    background: rgba(209, 0, 37, 0.78);
+    background: #212121;
     font-size: 17px;
     font-weight: bold;
     color: #fff;
@@ -73,9 +73,10 @@ input[type='checkbox']{
 }
 /* 加载 */
 .loading{
+    margin: 10px auto;
     display: block;
     width: 100px;
     height: 100px;
-    background: url(../../images/icon/loading.jpg) no-repeat;
+    background: url(../../images/icon/loading.gif) no-repeat;
 
 }

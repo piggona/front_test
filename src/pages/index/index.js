@@ -1,25 +1,22 @@
 'use strict';
-//要使得require在
-require('../module.js');
-// require('./index.css');
-var $$ = require('jquery');
+
+
+// require('../module.js');
+require('./index.css');
+require('pages/common/card/index.css');
+// var $$ = require('jquery');
+require('./select2-generate.js');
+require('pages/common/nav-simple/index.js');
+require('pages/common/nav/index.js');
+require('pages/common/header/index.js');
+require('pages/common/nav-side/index.js');
+require('pages/common/js_plugins/demo.js');
+require('pages/common/js_plugins/adminlte.js');
+// require('pages/common/js_plugins/Widget.js');
+// require('pages/common/js_plugins/plugins/input-mask/jquery.inputmask.date.extensions.js');
+// require('pages/common/js_plugins/plugins/input-mask/jquery.inputmask.extensions.js');
+// require('pages/common/js_plugins/plugins/slimScroll/jquery.slimscroll.min.js');
+// require('pages/common/js_plugins/plugins/iCheck/icheck.min.js');
+// require('pages/common/plugins/fastclick/fastclick.js');
+
 var _patent= require('utils/patent.js');
-
-_patent.request({
-    url : 'http://happymmall.com/product/list.do?keyword=1',
-    success: function(res){
-        console.log(res);
-    },
-    error: function(err){
-        console.log(err);
-    }
-});
-console.log(_patent.getUrlParam('test'));
-var html = '<div>{{data}}</div>';
-var data = {
-    data : 123
-};
-console.log(_patent.renderHtml(html,data));
-
-// $$('body').html('Hello Index');
-// console.log('hello index');
